@@ -1,0 +1,28 @@
+{
+  "name": "accelerated.angular",
+  "version": "1.0.0",
+  "authors": [
+    "Haseeb Qureshi <haseeb.n.qureshi@gmail.com>"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/haseebnqureshi/accelerated.angular.git"
+  },
+  "private": true,
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendors",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.3",
+    "angular-route": "~1.4.3",
+    "underscore": "~1.8.3",
+    "angular-cookies": "~1.4.8",
+    "angular-animate": "~1.4.8"
+  }
+}

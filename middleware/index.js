@@ -16,7 +16,7 @@ module.exports = function(express, app, models) {
 	Middleware
 	------------*/
 
-
+	app.use('/', express.static(process.env.ANGULAR_APP_PATH || 'www'));
 
 	/*------
 	Returning App (ensuring app waterfalls)

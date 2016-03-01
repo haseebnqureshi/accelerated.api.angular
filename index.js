@@ -1,7 +1,7 @@
 module.exports = (function() {
 
-	var moduleKey = 'module';
-	var moduleName = 'Module';
+	var moduleKey = 'angular';
+	var moduleName = 'Angular';
 
 	/* Careful - don't modify below unless you're sure! */
 

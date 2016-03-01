@@ -1,0 +1,17 @@
+
+* {
+	outline: none;
+}
+
+.view-container {
+	opacity: 1;
+	transition: opacity 0.25s;
+}
+
+.view-container.ng-enter {
+	opacity: 0;
+}
+
+.view-container.ng-leave {
+	opacity: 1;
+}

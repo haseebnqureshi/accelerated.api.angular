@@ -1,22 +1,21 @@
 {
-  "name": "accelerated.api.module",
+  "name": "accelerated.api.angular",
   "version": "1.0.0",
-  "description": "Module template for accelerated.api.",
+  "description": "Fastest way to launch your next Angular app.",
   "main": "index.js",
   "scripts": {
-    "test": "npm -v"
+    "test": "npm -v",
+    "install": "bash install.sh"
   },
   "author": "Haseeb Qureshi <haseeb.n.qureshi@gmail.com> (http://twitter.com/_hq)",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/haseebnqureshi/accelerated.api.module.git"
+    "url": "git+https://github.com/haseebnqureshi/accelerated.api.angular.git"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/haseebnqureshi/accelerated.api.module/issues"
+    "url": "https://github.com/haseebnqureshi/accelerated.api.angular/issues"
   },
-  "homepage": "https://github.com/haseebnqureshi/accelerated.api.module#readme",
-  "dependencies": {
-    "underscore": "^1.8.3"
-  }
+  "homepage": "https://github.com/haseebnqureshi/accelerated.api.angular#readme",
+  "dependencies": {}
 }
