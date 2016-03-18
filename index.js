@@ -1,7 +1,7 @@
-module.exports = (function() {
+module.exports = function() {
 
     // you can require this or other modules using accelerated.api.module 
-    var module = require('accelerated.api.module');
+    var module = new require('accelerated.api.module')();
     
     // set your module's key for reference by middlwares, models, and routes 
     module.setKey('angular');
@@ -35,4 +35,4 @@ module.exports = (function() {
 
     return module;
 
-})();
+};
