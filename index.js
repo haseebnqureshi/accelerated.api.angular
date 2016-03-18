@@ -1,24 +1,38 @@
 module.exports = (function() {
 
-	var moduleKey = 'angular';
-	var moduleName = 'Angular';
+    // you can require this or other modules using accelerated.api.module 
+    var module = require('accelerated.api.module');
+    
+    // set your module's key for reference by middlwares, models, and routes 
+    module.setKey('angular');
 
-	/* Careful - don't modify below unless you're sure! */
+    // set your module's name for logging output 
+    module.setName('Angular Module');
 
-	var Module = {
+    // you can choose to extend your module's middleware 
+    module.appendMiddleware(function(express, app, models) {
 
-		key: moduleKey,
+		app.use('/', express.static(process.env.ANGULAR_APP_PATH || 'www'));
 
-		name: moduleName,
+        // modify app to include user authentication middleware 
+        return app;
 
-		middleware: require('./middleware'),
+    });
 
-		model: require('./model'),
+    // you can choose to extend your module's routes
+    module.appendRoute(function(express, app, models) {
 
-		route: require('./route')
-	
-	};
+		app.get('/*', function(req, res) {
+			return res.status(200).sendFile(process.env.HOME + '/' 
+				+ process.env.ANGULAR_APP_PATH || 'www' + '/'
+				+ process.env.ANGULAR_APP_INDEX || 'index.html');
+		});
 
-	return Module;
+        // modify app to include user CRUD routes 
+        return app;
+
+    });
+
+    return module;
 
 })();

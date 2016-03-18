@@ -1,6 +1,6 @@
 {
   "name": "accelerated.api.angular",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Fastest way to launch your next Angular app.",
   "main": "index.js",
   "scripts": {
@@ -17,5 +17,7 @@
     "url": "https://github.com/haseebnqureshi/accelerated.api.angular/issues"
   },
   "homepage": "https://github.com/haseebnqureshi/accelerated.api.angular#readme",
-  "dependencies": {}
+  "dependencies": {
+    "accelerated.api.module": "^1.1.0"
+  }
 }
