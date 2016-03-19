@@ -10,7 +10,7 @@ module.exports = (function() {
         name: 'Angular Module',
 
         //you can choose to extend your module's middleware 
-        appendMiddleware: function(express, app, models) {
+        appendMiddleware: function(express, app, models, settings) {
 
             app.use('/', express.static(process.env.ANGULAR_APP_PATH || 'www'));
 
@@ -20,7 +20,7 @@ module.exports = (function() {
         },
 
         //you can choose to extend your module's routes
-        appendRoute: function(express, app, models) {
+        appendRoute: function(express, app, models, settings) {
 
             app.get('/*', function(req, res) {
                 return res.status(200).sendFile(process.env.HOME + '/' 
