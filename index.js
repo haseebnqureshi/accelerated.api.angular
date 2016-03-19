@@ -1,38 +1,41 @@
-module.exports = function() {
+module.exports = (function() {
 
-    // you can require this or other modules using accelerated.api.module 
-    var module = new require('accelerated.api.module')();
-    
-    // set your module's key for reference by middlwares, models, and routes 
-    module.setKey('angular');
+    //loading accelerated's module with your appropriate settings
+    var module = new require('accelerated.api.module')({
 
-    // set your module's name for logging output 
-    module.setName('Angular Module');
+        //set your module's key for reference by middlwares, models, and routes 
+        key: 'angular',
 
-    // you can choose to extend your module's middleware 
-    module.appendMiddleware(function(express, app, models) {
+        //set your module's name for logging output 
+        name: 'Angular Module',
 
-		app.use('/', express.static(process.env.ANGULAR_APP_PATH || 'www'));
+        //you can choose to extend your module's middleware 
+        appendMiddleware: function(express, app, models) {
 
-        // modify app to include user authentication middleware 
-        return app;
+            app.use('/', express.static(process.env.ANGULAR_APP_PATH || 'www'));
+
+            //modify app to include user authentication middleware 
+            return app;
+
+        },
+
+        //you can choose to extend your module's routes
+        appendRoute: function(express, app, models) {
+
+            app.get('/*', function(req, res) {
+                return res.status(200).sendFile(process.env.HOME + '/' 
+                    + process.env.ANGULAR_APP_PATH || 'www' + '/'
+                    + process.env.ANGULAR_APP_INDEX || 'index.html');
+            });
+
+            //modify app to include user CRUD routes 
+            return app;
+
+        }
 
     });
 
-    // you can choose to extend your module's routes
-    module.appendRoute(function(express, app, models) {
-
-		app.get('/*', function(req, res) {
-			return res.status(200).sendFile(process.env.HOME + '/' 
-				+ process.env.ANGULAR_APP_PATH || 'www' + '/'
-				+ process.env.ANGULAR_APP_INDEX || 'index.html');
-		});
-
-        // modify app to include user CRUD routes 
-        return app;
-
-    });
-
+    //returning for use by accelerated.api
     return module;
 
-};
+})();

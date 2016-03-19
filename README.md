@@ -8,7 +8,7 @@ Once you include ```accelerated.api.angular``` into your project dependencies an
 
 var app = require('accelerated.api');
 
-var angular = new require('acceleratd.api.angular')();
+var angular = require('acceleratd.api.angular').use();
 
 app.useMiddlewares([ 
 	[angular.key, angular.middleware]
