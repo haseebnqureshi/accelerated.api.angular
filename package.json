@@ -1,6 +1,6 @@
 {
   "name": "accelerated.api.angular",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Fastest way to launch your next Angular app.",
   "main": "index.js",
   "scripts": {

@@ -23,9 +23,9 @@ module.exports = (function() {
         appendRoute: function(express, app, models, settings) {
 
             app.get('/*', function(req, res) {
-                return res.status(200).sendFile(process.env.HOME + '/' 
-                    + process.env.ANGULAR_APP_PATH || 'www' + '/'
-                    + process.env.ANGULAR_APP_INDEX || 'index.html');
+                return res.status(200).sendFile(process.env.PWD + '/' 
+                    + (process.env.ANGULAR_APP_PATH || 'www') + '/'
+                    + (process.env.ANGULAR_APP_INDEX || 'index.html'));
             });
 
             //modify app to include user CRUD routes 
